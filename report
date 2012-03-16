@@ -1,0 +1,154 @@
+require 'rubygems'
+require 'sinatra'
+require 'dm-core'
+require 'date'
+require 'haml'
+
+require 'dm-timestamps'
+require "dm-migrations"
+
+require 'calendar_helper'
+
+
+WORK_TYPES = {
+        1 => "self-deployment",
+        2 => "working",
+        3 => "extra",
+        4 => "team"
+
+}
+
+helpers do
+
+  include CalendarHelper
+
+end
+
+DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/report.db")
+
+class User
+
+  include DataMapper::Resource
+
+  property :id, Serial
+  property :login, String
+  property :password, String
+
+end
+
+
+class Project
+
+  include DataMapper::Resource
+
+  property :id, Serial
+  property :name, String
+
+  has n, :records
+
+end
+
+class Record
+
+  include DataMapper::Resource
+
+  property :id, Serial
+  property :type, Integer
+  property :description, String
+  property :time, Integer
+
+  belongs_to :project, :required => false
+
+end
+
+
+#Create or upgrade all tables at once,like magic
+DataMapper.auto_upgrade!
+
+#set utf-8 for outgoing
+before do
+  headers "Content-Type"=>"text/html;charset=utf-8"
+end
+
+
+get '/' do
+  redirect "/rooms/#{Date.today}"
+
+end
+get '/rooms/:date' do |d|
+  @date = Date.parse d
+  haml :rooms
+end
+
+
+get '/record' do
+
+end
+
+
+get '/list' do
+  @title = "Reports list"
+  @records = Record.all
+  erb :list
+end
+
+get '/new' do
+  @title = "Add report"
+  @projects=Project.all
+
+  erb :new
+end
+
+post '/create' do
+  @record = Record.new(params[:record])
+#  @record.content_type = params[:image][:type]
+#  raise params.inspect
+  @record.project_id = params[:project_id]
+  @record.type = params[:type]
+  if  params[:HH] != "" and  params[:MM] != "" and params[:description] != "" and params[:HH].to_i < 23 and
+          params[:MM].to_i < 60
+    @record.time = params[:HH].to_i * 60 + params[:MM].to_i
+    @record.description = params[:description]
+     @record.save
+    # path = File.join(Dir.pwd,"/public/records", @record.description)
+    #  File.open(path , "wb") do |f|
+    #   f.write(params[:image][:tempfile].read)
+    #end
+   # redirect("/show/#{@record.id}")
+  #else
+    redirect('/list')
+#end
+    else
+    @error = "No correct time format or clear activity!!!"
+    @title = "Add report"
+    @projects=Project.all
+   erb :new
+end
+
+end
+
+get '/delete/:id' do
+  record = Record.get(params[:id])
+  #path = File.join(Dir.pwd,"/public/ads",record.description)
+  #File.delete(path)
+  unless record.nil?
+    record.destroy
+  end
+  redirect('/list')
+end
+
+get '/show/:id' do
+  @record = Record.get(params[:id])
+  if @record
+    erb :show
+  else
+    redirect('/list')
+
+  end
+
+
+end
+
+
+ 
+  

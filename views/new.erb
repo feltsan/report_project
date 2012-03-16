@@ -1,0 +1,49 @@
+<label> <%= @error %> </label>
+
+<h1><%= @title %> </h1>
+ <% def hinted_text_field_tag(name, value = nil, hint = "Click and enter text", options={})
+  value = value.nil? ? hint : value
+  text_field_tag name, value, {:onclick => "if($(this).value == '#{hint}'){$(this).value = ''}", :onblur => "if($(this).value == ''){$(this).value = '#{hint}'}" }.update(options.stringify_keys)
+end%>
+
+
+<form action="/create" method="post" id="record" enctype="multipart/form-data">
+  <p>
+    <label>Please select project,type and set time</label><br/>
+
+  <p>
+       <select name="project_id">
+      <% @projects.each do |project| %>
+          <option value="<%= project.id %>">
+            <%= project.name %>
+          </option>
+      <% end %>
+    </select>
+    <select name="type" >
+         <% WORK_TYPES.each do |key, value| %>
+          <option value="<%= key%>">
+            <%= value %>
+          </option>
+      <% end %>    
+    </select>
+
+      <input type="text" name="HH"  maxlength="2" size="2" type="time"  value="1" title="set hours" />:
+                <input type="text"    name="MM" maxlength="2"  size="2" type="time" value="30" title="set minutes"  maxlength="10"  />HH:MM
+    
+
+
+
+  <p>
+    <label>Activity:</label><br/>
+
+    <input type="text" name="description" id="description" title="...write descriptions"  />
+
+  </p>
+
+  <input type="submit" value="Save">
+  </p>
+
+</form> 
+
+
+
