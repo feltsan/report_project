@@ -1,0 +1,29 @@
+<h1><%= @title %></h1>
+ <div id="nav">
+
+     <a href="/rooms/<%= Date.today %>">Home</a> | <a href="/new">New</a>
+  </div>
+<table border="0" cellpadding="2" cellspacing="10" class="list">
+  <th> Project</th>
+  <th> Type</th>
+  <th> Activity</th>
+  <th> Time(HH:MM)</th>
+
+
+  <% @records.each_with_index do |record, i| %>
+
+
+      <tr<%= ' class="al1"' if i%2==0 %>>
+
+        <td> <%= record.project.name %></td>
+        <td> <%= WORK_TYPES[record.type] %></td>
+        <td> <%= record.description %></td>
+        <td> <%= (record.time/60).to_s + ":" +(record.time%60).to_s %></td>
+
+        <td><a href="/delete/<%= record.id %>"> delete </a></td>
+      </tr>
+  <% end %>
+
+
+</table>
+

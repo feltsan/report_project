@@ -1,0 +1,10 @@
+Select please data:
+%a{:href => "/rooms/#{@date - 1}"}
+  ="<" + (@date-1).to_s 
+%span
+  =@date
+%a{:href => "/rooms/#{@date + 1}"}
+  = (@date+1).to_s + ">"
+%p
+%a{:href => "/list"} List|
+%a{:href => "/new" } New
