@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager" verified="true">
-    <list default="true" readonly="true" id="03722d91-e9c1-411f-8098-edfc0a2a0baa" name="Default" comment="" />
+    <list default="true" readonly="true" id="03722d91-e9c1-411f-8098-edfc0a2a0baa" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layout.erb" afterPath="$PROJECT_DIR$/views/layout.erb" />
+    </list>
     <ignored path="report_project.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -60,19 +64,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="layout.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/layout.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="1" selection-start="361" selection-end="414" vertical-scroll-proportion="-6.818182">
+            <state line="84" column="22" selection-start="2273" selection-end="2273" vertical-scroll-proportion="0.8089172">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rooms.haml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="rooms.haml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/rooms.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="28" selection-start="209" selection-end="209" vertical-scroll-proportion="0.27383366">
+            <state line="9" column="28" selection-start="209" selection-end="209" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -100,8 +104,8 @@
         <option value="$PROJECT_DIR$/report" />
         <option value="$PROJECT_DIR$/views/list.erb" />
         <option value="$PROJECT_DIR$/views/welcome.erb" />
-        <option value="$PROJECT_DIR$/views/layout.erb" />
         <option value="$PROJECT_DIR$/views/rooms.haml" />
+        <option value="$PROJECT_DIR$/views/layout.erb" />
       </list>
     </option>
   </component>
@@ -206,6 +210,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="report_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="report_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -475,16 +493,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/layout.erb">
+    <entry file="file://$PROJECT_DIR$/views/rooms.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="1" selection-start="361" selection-end="414" vertical-scroll-proportion="-6.818182">
+        <state line="9" column="28" selection-start="209" selection-end="209" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/rooms.haml">
+    <entry file="file://$PROJECT_DIR$/views/layout.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="28" selection-start="209" selection-end="209" vertical-scroll-proportion="0.27383366">
+        <state line="84" column="22" selection-start="2273" selection-end="2273" vertical-scroll-proportion="0.8089172">
           <folding />
         </state>
       </provider>
