@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="RUBY_MODULE" version="4">
+<<<<<<< HEAD
   <component name="GemRequirementsHolder" version="2">
     <requirement>
       <requirement>
@@ -26,10 +27,13 @@
       <source from="Gemfile" />
     </requirement>
   </component>
+=======
+>>>>>>> origin/master
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+<<<<<<< HEAD
     <orderEntry type="library" scope="PROVIDED" name="[gem] dm-core (v1.2.0, C:/Ruby193/lib/ruby/gems/1.9.1/gems/dm-core-1.2.0)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] dm-do-adapter (v1.2.0, C:/Ruby193/lib/ruby/gems/1.9.1/gems/dm-do-adapter-1.2.0)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] dm-timestamps (v1.2.0, C:/Ruby193/lib/ruby/gems/1.9.1/gems/dm-timestamps-1.2.0)" level="application" />
@@ -57,6 +61,8 @@
     <orderEntry type="library" scope="PROVIDED" name="[gem] data_mapper (v1.2.0, C:/Ruby193/lib/ruby/gems/1.9.1/gems/data_mapper-1.2.0)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] sinatra-redirect-with-flash (v0.2.0, C:/Ruby193/lib/ruby/gems/1.9.1/gems/sinatra-redirect-with-flash-0.2.0)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] dm-sqlite-adapter (v1.2.0, C:/Ruby193/lib/ruby/gems/1.9.1/gems/dm-sqlite-adapter-1.2.0)" level="application" />
+=======
+>>>>>>> origin/master
   </component>
 </module>
 
